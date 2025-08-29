@@ -4,31 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>天气查询应用</title>
+    <!-- 引入 Font Awesome 图标库 (虽然当前版本没用，但保留无害) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 链接我们的样式文件 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="weather-app">
         <div class="search-bar">
-            <input type="text" id="city-input" placeholder="输入城市名（支持中文），例如：北京">
-            <button id="search-btn">查询</button>
+            <input type="text" id="city-input" placeholder="输入城市名，例如：北京">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+                查询
+            </button>
         </div>
 
         <!-- 天气结果展示区 -->
         <div id="weather-results" class="weather-results hidden">
-            <h2 id="city-name">--</h2>
+            <h2 id="city-name">
+                <i class="fas fa-location-dot"></i>
+                <span>--</span>
+            </h2>
             <div class="weather-icon">
                 <img id="weather-icon-img" src="" alt="天气图标">
             </div>
             <p id="temperature" class="temperature">--°C</p>
-            <p id="description" class="description">--</p>
+            <p id="description" class="description">
+                <i class="fas fa-cloud"></i>
+                <span>--</span>
+            </p>
             
             <div class="details">
                 <div class="detail-item">
-                    <span>湿度</span>
+                    <span>
+                        <i class="fas fa-water"></i>
+                        湿度
+                    </span>
                     <span id="humidity">--%</span>
                 </div>
                 <div class="detail-item">
-                    <span>风速</span>
+                    <span>
+                        <i class="fas fa-wind"></i>
+                        风速
+                    </span>
                     <span id="wind-speed">-- km/h</span>
                 </div>
             </div>
@@ -36,13 +55,15 @@
 
         <!-- 错误信息提示区 -->
         <div id="error-message" class="error-message hidden">
+            <i class="fas fa-exclamation-circle"></i>
             <p>找不到城市信息，请检查输入是否正确。</p>
         </div>
     </div>
 
-    <!-- 脚本引入（顺序很重要） -->
+    <!-- 脚本引入顺序很重要 -->
     <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.18.5/dist/pinyin-pro.min.js"></script>
     <script src="apikey.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
